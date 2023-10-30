@@ -1,0 +1,17 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+
+    <!-- Include the XML files for creating tables -->
+    <include file="career-schema-and-requirements.xml"/>
+
+    <!-- Include the XML files for inserting data -->
+    <include file="insert-data-softskills.xml"/>
+    <include file="insert-data-hardskills.xml"/>
+    <include file="insert-data-certifications.xml"/>
+    <include file="insert-data-careerpaths.xml"/>
+
+
+</databaseChangeLog>
