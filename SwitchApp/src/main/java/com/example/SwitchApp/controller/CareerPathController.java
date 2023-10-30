@@ -1,7 +1,15 @@
 package com.example.SwitchApp.controller;
 
+import com.example.SwitchApp.model.CareerPath;
+import com.example.SwitchApp.service.CareerPathService;
+import com.example.SwitchApp.service.CareerPathService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 @RequestMapping("career-paths")
@@ -15,9 +23,18 @@ public class CareerPathController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CareerPath>> getAllCareerPaths() {
+    public ResponseEntity<Object> getAllCareerPaths() {
         List<CareerPath> careerPaths = careerPathService.getAllCareerPaths();
         return ResponseEntity.ok(careerPaths);
     }
 
+    @GetMapping("/{pathID}")
+    public ResponseEntity<CareerPath> getAllCareerPathById(@PathVariable int pathID) {
+        CareerPath careerPath = careerPathService.getCareerPathById(pathID);
+        if (careerPath != null) {
+            return ResponseEntity.ok(careerPath);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
