@@ -1,20 +1,22 @@
 package com.example.SwitchApp.model;
 
+
 import jakarta.persistence.*;
 
 @Entity
+
 @Table(name = "CareerPaths")
 public class CareerPath {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PathID")
+    @Column(name = "pathid")
     private int pathID;
 
-    @Column(name = "PathName", nullable = false)
+    @Column(name = "pathname", nullable = false)
     private String pathName;
 
-    @Column(name = "Description")
+    @Column(name = "description")
     private String description;
 
 

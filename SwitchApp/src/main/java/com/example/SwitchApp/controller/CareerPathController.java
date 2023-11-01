@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("career-paths")
+@RequestMapping("career_paths")
 public class CareerPathController {
 
     private final CareerPathService careerPathService;
@@ -22,19 +22,29 @@ public class CareerPathController {
         this.careerPathService = careerPathService;
     }
 
-    @GetMapping
-    public ResponseEntity<Object> getAllCareerPaths() {
-        List<CareerPath> careerPaths = careerPathService.getAllCareerPaths();
-        return ResponseEntity.ok(careerPaths);
+//    @GetMapping
+//    public ResponseEntity<Object> getAllCareerPaths() {
+//        List<CareerPath> careerPaths = careerPathService.getAllCareerPaths();
+//        return ResponseEntity.ok(careerPaths);
+//    }
+
+    @GetMapping("/getAllPaths")
+        public List<CareerPath> getAllCareerPaths() {
+        List<CareerPath> careerPaths = careerPathService.getAllCareerPaths(); // You need to implement this service method.
+        return careerPaths;
     }
 
-    @GetMapping("/{pathID}")
-    public ResponseEntity<CareerPath> getAllCareerPathById(@PathVariable int pathID) {
-        CareerPath careerPath = careerPathService.getCareerPathById(pathID);
-        if (careerPath != null) {
-            return ResponseEntity.ok(careerPath);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+
+    //{pathID}
+//    public ResponseEntity<CareerPath> getAllCareerPathById(@PathVariable int pathID) {
+//        CareerPath careerPath = careerPathService.getCareerPathById(pathID);
+//        if (careerPath != null) {
+//            return ResponseEntity.ok(careerPath);
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+
+        //  public List<Student> getDetails() {
+        //        return studentService.getAllDetails();
+        //    }
     }
-}
