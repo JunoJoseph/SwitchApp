@@ -14,6 +14,22 @@ public class CareerPath {
     @Column(name = "PathName", nullable = false)
     private String pathName;
 
+    @Column(name = "Description")
+    private String description;
+
+
+
+
+    public CareerPath(int pathID, String pathName, String description) {
+        this.pathID = pathID;
+        this.pathName = pathName;
+        this.description = description;
+    }
+
+
+    public CareerPath() {
+        // for persistence
+    }
 
     public int getPathID() {
         return pathID;
@@ -37,21 +53,6 @@ public class CareerPath {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Column(name = "Description")
-    private String description;
-
-
-    public CareerPath(int pathID, String pathName, String description) {
-        this.pathID = pathID;
-        this.pathName = pathName;
-        this.description = description;
-    }
-
-
-    public CareerPath() {
-        // for persistence
     }
 }
 
