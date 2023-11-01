@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 
-@Table(name = "CareerPaths")
+@Table(name = "career_paths")
 public class CareerPath {
 
     @Id
