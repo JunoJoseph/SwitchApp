@@ -16,24 +16,25 @@
     </changeSet>
 
     <!-- Insert data into the career_paths table -->
-    <changeSet id="5" author="Juno">
+    <changeSet id="5.2" author="Juno">
         <insert tableName="career_paths">
             <column name="pathname" value="Software Engineer"/>
-            <column name="description" value="Software engineering career path."/>
+            <column name="description" value="Design, develop, and maintain software applications and systems in a dynamic and innovative field."/>
         </insert>
     </changeSet>
 
-    <changeSet id="6" author="Juno">
+    <changeSet id="6.1" author="Juno">
         <insert tableName="career_paths">
             <column name="pathname" value="Data Scientist"/>
-            <column name="description" value="Data science career path."/>
+            <column name="description" value="Extract insights from data, apply machine learning, and drive data-driven decision-making in various industries."/>
         </insert>
     </changeSet>
 
-    <changeSet id="7" author="Juno">
+    <changeSet id="7.1" author="Juno">
         <insert tableName="career_paths">
             <column name="pathname" value="Web Developer"/>
-            <column name="description" value="Web development career path."/>
+            <column name="description" value="Create websites and web applications, shaping the digital world with user-friendly and interactive experiences."/>
+
         </insert>
     </changeSet>
 
