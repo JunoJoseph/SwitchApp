@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
-    <changeSet id="4" author="Juno">
+    <changeSet id="4.1" author="Juno">
         <createTable tableName="career_paths">
             <column name="pathid" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -12,14 +12,16 @@
                 <constraints nullable="false"/>
             </column>
             <column name="description" type="TEXT"/>
+            <column name="skillid" type="INTEGER"/>
         </createTable>
     </changeSet>
 
     <!-- Insert data into the career_paths table -->
-    <changeSet id="5.2" author="Juno">
+    <changeSet id="5.3" author="Juno">
         <insert tableName="career_paths">
             <column name="pathname" value="Software Engineer"/>
             <column name="description" value="Design, develop, and maintain software applications and systems in a dynamic and innovative field."/>
+            <column name="skillid" value="2"/>
         </insert>
     </changeSet>
 
@@ -37,6 +39,7 @@
 
         </insert>
     </changeSet>
+
 
 
     <!-- Add more changeSets to insert data into the table if needed -->

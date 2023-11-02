@@ -4,7 +4,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd">
 
     <!-- Create the SoftSkills table -->
-    <changeSet id="soft-skill-table.4" author="Juno">
+    <changeSet id="soft-skill-table.5" author="Juno">
         <createTable tableName="soft_skills">
             <column name="skillid" type="INTEGER" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -15,8 +15,8 @@
         </createTable>
     </changeSet>
 
-    <!-- Insert data into the SoftSkills table -->
-    <changeSet id="soft-skills-data.1" author="Juno">
+        <!-- Insert data into the SoftSkills table -->
+    <changeSet id="soft-skills-data.2" author="Juno">
         <insert tableName="soft_skills">
             <column name="skillname" value="Communication"/>
         </insert>
@@ -24,5 +24,17 @@
             <column name="skillname" value="Teamwork"/>
         </insert>
 
+    </changeSet>
+    <!-- Add a foreign key in the career_path table to reference soft_skills -->
+    <changeSet id="career-path-soft-skill" author="Juno">
+        <addForeignKeyConstraint
+                baseTableName="career_paths"
+                baseColumnNames="skillid"
+                constraintName="fk_career_path_soft_skill"
+                referencedTableName="soft_skills"
+                referencedColumnNames="skillid"
+                onDelete="CASCADE"
+                onUpdate="CASCADE"
+        />
     </changeSet>
 </databaseChangeLog>
