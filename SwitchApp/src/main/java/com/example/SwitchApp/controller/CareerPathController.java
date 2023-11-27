@@ -30,7 +30,7 @@ public class CareerPathController {
 
     @GetMapping("/getAllPaths")
         public List<CareerPath> getAllCareerPaths() {
-        List<CareerPath> careerPaths = careerPathService.getAllCareerPaths(); // You need to implement this service method.
+        List<CareerPath> careerPaths = careerPathService.getAllCareerPaths();
         return careerPaths;
     }
 

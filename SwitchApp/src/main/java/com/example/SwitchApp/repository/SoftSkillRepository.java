@@ -2,8 +2,9 @@ package com.example.SwitchApp.repository;
 
 import com.example.SwitchApp.model.SoftSkill;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public interface SoftSkillRepository extends JpaRepository<SoftSkill, Integer> {
 
     // Custom query method to find a SoftSkill by its name
