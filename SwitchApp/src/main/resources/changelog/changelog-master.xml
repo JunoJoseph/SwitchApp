@@ -7,6 +7,7 @@
     <include file="/changelog/soft-skills-table.xml"/>
     <include file="/changelog/technical-skills-table.xml"/>
     <include file="/changelog/certification-table.xml"/>
+    <include file="/changelog/career-path-requirements.xml"/>
 
 
 

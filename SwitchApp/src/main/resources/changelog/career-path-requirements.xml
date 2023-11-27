@@ -1,0 +1,101 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <!-- Create CareerPathRequirements table -->
+    <changeSet id="25.3" author="Juno">
+    <createTable tableName="career_path_requirements">
+        <column name="id" type="BIGINT" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="path_id" type="BIGINT">
+            <constraints nullable="false" references="career_paths(pathid)" foreignKeyName="fk_career_path_requirements_path"/>
+        </column>
+        <column name="requirement_id" type="BIGINT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="requirement_type" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+</changeSet>
+
+    <!-- Insert records for CareerPathRequirements -->
+
+    <!-- CareerPath: Software Engineer -->
+    <changeSet id="26.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="1"/>
+            <column name="requirement_type" value="TechnicalSkill"/>
+            <column name="requirement_id" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="27.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="1"/>
+            <column name="requirement_type" value="SoftSkill"/>
+            <column name="requirement_id" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="28.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="1"/>
+            <column name="requirement_type" value="Certification"/>
+            <column name="requirement_id" value="1"/>
+        </insert>
+    </changeSet>
+
+    <!-- CareerPath: Data Scientist -->
+    <changeSet id="29.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="2"/>
+            <column name="requirement_type" value="TechnicalSkill"/>
+            <column name="requirement_id" value="2"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="30.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="2"/>
+            <column name="requirement_type" value="SoftSkill"/>
+            <column name="requirement_id" value="2"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="31.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="2"/>
+            <column name="requirement_type" value="Certification"/>
+            <column name="requirement_id" value="3"/>
+        </insert>
+    </changeSet>
+
+    <!-- CareerPath: Web Developer -->
+    <changeSet id="32.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="3"/>
+            <column name="requirement_type" value="TechnicalSkill"/>
+            <column name="requirement_id" value="3"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="33.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="3"/>
+            <column name="requirement_type" value="SoftSkill"/>
+            <column name="requirement_id" value="4"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="34.2" author="Juno">
+        <insert tableName="career_path_requirements">
+            <column name="path_id" value="3"/>
+            <column name="requirement_type" value="Certification"/>
+            <column name="requirement_id" value="4"/>
+        </insert>
+    </changeSet>
+
+    <!-- Add more changeSets to associate additional requirements with CareerPaths if needed -->
+</databaseChangeLog>

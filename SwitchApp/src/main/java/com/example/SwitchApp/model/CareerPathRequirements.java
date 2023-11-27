@@ -52,6 +52,5 @@ public CareerPathRequirements(int careerPathID, int technicalSkillID, int certif
 
 
 
-
 }
 
