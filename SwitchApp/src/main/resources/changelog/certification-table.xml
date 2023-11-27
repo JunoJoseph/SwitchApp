@@ -1,0 +1,78 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <!-- Create certifications table -->
+    <changeSet id="18.1" author="Juno">
+        <createTable tableName="certifications">
+            <column name="certification_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="certification_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="certification_link" type="VARCHAR(255)"/>
+            <column name="certification_image" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Insert certifications for Software Engineer -->
+    <changeSet id="19.1" author="Juno">
+        <insert tableName="certifications">
+            <column name="certification_name" value="Java SE 8 Programmer"/>
+            <column name="description" value="Certification for proficient Java programming skills."/>
+            <column name="certification_link" value="https://www.example.com/java-se"/>
+            <column name="certification_image" value="https://www.example.com/images/java-se.png"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="20.1" author="Juno">
+        <insert tableName="certifications">
+            <column name="certification_name" value="Spring Framework Certified Professional"/>
+            <column name="description" value="Certification demonstrating expertise in the Spring Framework."/>
+            <column name="certification_link" value="https://www.example.com/spring-certified"/>
+            <column name="certification_image" value="https://www.example.com/images/spring-certified.png"/>
+        </insert>
+    </changeSet>
+
+    <!-- Insert certifications for Web Developer -->
+    <changeSet id="21.1" author="Juno">
+        <insert tableName="certifications">
+            <column name="certification_name" value="HTML5 Developer Certificate"/>
+            <column name="description" value="Certification for advanced HTML5 development skills."/>
+            <column name="certification_link" value="https://www.example.com/html5-certificate"/>
+            <column name="certification_image" value="https://www.example.com/images/html5-certificate.png"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="22.1" author="Juno">
+        <insert tableName="certifications">
+            <column name="certification_name" value="JavaScript Developer Certificate"/>
+            <column name="description" value="Certification demonstrating proficiency in JavaScript development."/>
+            <column name="certification_link" value="https://www.example.com/js-certificate"/>
+            <column name="certification_image" value="https://www.example.com/images/js-certificate.png"/>
+        </insert>
+    </changeSet>
+
+    <!-- Insert certifications for Kubernetes and Kafka -->
+    <changeSet id="23.1" author="Juno">
+        <insert tableName="certifications">
+            <column name="certification_name" value="Certified Kubernetes Administrator (CKA)"/>
+            <column name="description" value="Certification for Kubernetes administration skills."/>
+            <column name="certification_link" value="https://www.example.com/cka"/>
+            <column name="certification_image" value="https://www.example.com/images/cka.png"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="24.1" author="Juno">
+        <insert tableName="certifications">
+            <column name="certification_name" value="Confluent Certified Developer for Apache Kafka"/>
+            <column name="description" value="Certification demonstrating proficiency in developing with Apache Kafka."/>
+            <column name="certification_link" value="https://www.example.com/kafka-certified"/>
+            <column name="certification_image" value="https://www.example.com/images/kafka-certified.png"/>
+        </insert>
+    </changeSet>
+
+    <!-- Add more changeSets to insert data into the table if needed -->
+</databaseChangeLog>
