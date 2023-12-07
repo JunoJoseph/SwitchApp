@@ -1,0 +1,9 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(çÒ¬»ùÿÿÿÿ8ş÷Ä1
+X	java:S125"<This block of commented-out lines of code should be removed.(ñŞ”8Š÷Ä1
+X	java:S125."<This block of commented-out lines of code should be removed.(ìÃšô8÷Ä1
+]	java:S1257"<This block of commented-out lines of code should be removed.(‹â°Óùÿÿÿÿ8÷Ä1
+@
+java:S1128"Remove this duplicated import.(“¦˜óşÿÿÿÿ8÷Ä1
+s
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.PathVariable'.(¹ûñÅşÿÿÿÿ8÷Ä1

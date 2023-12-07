@@ -4,6 +4,8 @@ import com.example.SwitchApp.model.CareerPath;
 import com.example.SwitchApp.service.CareerPathService;
 import com.example.SwitchApp.service.CareerPathService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,9 +31,15 @@ public class CareerPathController {
 //    }
 
     @GetMapping("/getAllPaths")
-        public List<CareerPath> getAllCareerPaths() {
-        List<CareerPath> careerPaths = careerPathService.getAllCareerPaths();
-        return careerPaths;
+    public ResponseEntity<List<CareerPath>> getAllCareerPaths() {
+        try {
+            List<CareerPath> careerPaths = careerPathService.getAllCareerPaths();
+            return new ResponseEntity<>(careerPaths, HttpStatus.OK);
+        } catch (DataAccessException e) {
+            // Log the exception or handle it in some way
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
 
