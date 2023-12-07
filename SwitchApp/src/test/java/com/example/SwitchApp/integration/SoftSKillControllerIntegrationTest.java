@@ -41,4 +41,5 @@ class SoftSkillControllerIntegrationTest {
         Assertions.assertEquals(200, res.statusCode());
         Assertions.assertEquals("[null]", res.jsonPath().getString("name"));
     }
+
 }
